@@ -3,6 +3,7 @@ const featureSubElems = document.querySelectorAll('.feature-sub');
 
 featureLinkElems.forEach((btn, index) => {
   btn.addEventListener('click', () => {
+  if (!btn.classList.contains('feature__link_active')) {
     featureSubElems.forEach((featureSubElem) => {
       featureSubElem.classList.add('hidden');
     });
@@ -11,5 +12,9 @@ featureLinkElems.forEach((btn, index) => {
     });
     featureSubElems[index].classList.remove('hidden');
     btn.classList.add('feature__link_active');
+  } else {
+    btn.classList.remove('feature__link_active');
+    featureSubElems[index].classList.add('hidden');
+  }
   })
 });
