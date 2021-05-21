@@ -1,6 +1,6 @@
 const tabsHandlerElems = document.querySelectorAll('[data-tabs-handler]');
 const tabsFieldElems = document.querySelectorAll('[data-tabs-field]');
-// const tabsTitleElems = document.querySelectorAll('.design__title');
+const tabsTitleElems = document.querySelectorAll('.design__title');
 
 
 
@@ -19,6 +19,9 @@ for (const tab of tabsHandlerElems) {
       } else {
         item.classList.add('hidden')
       }
+    });
+    tabsTitleElems.forEach(elem => {
+      elem.classList.toggle('hidden');
     })
   })
 }
